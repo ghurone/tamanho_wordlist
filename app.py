@@ -40,7 +40,7 @@ if np.all(checksbox==False):
 col2.write('Considerar as quebras de linha?')
 break_line = col2.checkbox('Sim', value=True)
 
-col2.write('Sistema de unidade')
+col2.write('Base numérica')
 unit = col2.radio('a', options=['SI', 'IEC'], label_visibility='collapsed')
 
 # Resultado
