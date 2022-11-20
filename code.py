@@ -1,7 +1,7 @@
 import math
 
 
-def byte_formatter(number:int, unit='si', decimal_digits=3):
+def byte_formatter(number:int, unit='si', decimal_digits=3, decimal:str=','):
     unidades = {'SI':1000, 'IEC':1024}
     prefix = ['', 'k', 'M', 'G', 'T', 'P', 'E', 'Z', 'Y']
     num_super = ['⁰', '¹', '²', '³', '⁴', '⁵', '⁶', '⁷', '⁸', '⁹']
@@ -20,7 +20,7 @@ def byte_formatter(number:int, unit='si', decimal_digits=3):
         n = ''.join([num_super[int(i)] for i in str(ordem*3)])
         pre = f'10{n}'
 
-    return str(round(number/div, decimal_digits)) + f' {pre}B'
+    return str(round(number/div, decimal_digits)).replace('.', decimal) + f' {pre}B'
 
 
 def byte_counter(chars:str,
